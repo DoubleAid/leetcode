@@ -14,3 +14,39 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
+        nlist=[]
+        mlist=[]
+        mlist.extend(nums)
+        mlist.sort()
+        Tlist=self.mymergecompare(mlist,target)
+        for i in Tlist:
+            print(i)
+            nlist.append(nums.index(i))
+        return nlist
+
+    def mymergecompare(self,nums,target):
+        """
+        :param nums:
+        :param target:
+        :return:
+        """
+
+        Mlist = []
+        if len(nums) <= 1 :
+            return list
+        if nums[-1]+nums[0] >target:
+            Mlist = self.mymergecompare(nums[0:-1],target)
+        elif nums[-1]+nums[0] < target:
+            Mlist = self.mymergecompare(nums[1:],target)
+        else:
+            Mlist.append(nums[0])
+            Mlist.append(nums[-1])
+        return Mlist
+
+if __name__=="__main__":
+    nums = [1, 2, 5, 9, 10, 3]
+    target = 7
+    s = Solution()
+    n = s.twoSum(nums, target)
+    for each in n:
+        print(each)
