@@ -43,10 +43,6 @@ class Solution:
             Mlist.append(nums[-1])
         return Mlist
 
-if __name__=="__main__":
-    nums = [1, 2, 5, 9, 10, 3]
-    target = 7
-    s = Solution()
-    n = s.twoSum(nums, target)
-    for each in n:
-        print(each)
+    """
+    problem:Memory Limit Exceeded
+    """
