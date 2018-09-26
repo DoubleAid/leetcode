@@ -1,0 +1,45 @@
+个人觉得有点像最大字串的问题
+那么就分为左字串，右字串和中间三者进行比较
+如何进行中间的比较呢，
+我分成了
+1、扫左，记录长度
+2、扫右，记录长度
+如果左边长，以左边为主合入
+如果右边长，以右边为主合入
+"""
+
+class Solution:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s=="":
+            return 0
+        # sleng = 1
+        # for i in range(1,len(s)):
+        #     if s[i] not in s[0:i]:
+        #         sleng = sleng+1
+        #     else:
+        #         lenl=sleng
+        #         lenr=self.lengthOfLongestSubstring(s[s.find(s[i])+1:])
+        #         sleng=max(lenl,lenr)
+        #         break
+        # return sleng
+        length=-1
+        startaddress=0
+        i=0
+        for i in range(1,len(s)):
+            if s[i] in s[startaddress:i]:
+                m=s[startaddress:i].find(s[i])
+                length=max(length,i-startaddress)
+                startaddress=startaddress+m+1
+        length=max(length,i-startaddress+1)
+        return length
+if __name__ == "__main__":
+    s = Solution()
+    # strn='bziuwnklhqzrxnb'
+    # strn='aab'
+    # strn=' '
+    # strn='abcabcbb'
+    print(s.lengthOfLongestSubstring(strn))
