@@ -1,0 +1,28 @@
+class Solution:
+    def myAtoi(self, str):
+        isNegative = 1
+        hasplus = 0
+        strn = str.lstrip()
+        if strn=="":
+            return 0
+        num = ""
+        if strn[0].isdecimal()!=True and strn[0]!='-' and strn[0]!="+":
+            return 0
+        if strn[0]=='-':
+            isNegative = -1
+            strn = strn.replace(strn[0], '', 1)
+        elif strn[0]=="+":
+            strn = strn.replace(strn[0], '', 1)
+        while len(strn)!=0:
+            if strn[0].isdigit():
+                num = num + strn[0]
+                strn = strn.replace(strn[0], '', 1)
+                continue
+            else:
+                break
+        if num=="":
+            return 0
+        num = int(num)*isNegative
+        num = num if num>-pow(2,31) else -pow(2,31)
+        num = num if num<pow(2,31)-1 else pow(2,31)-1
+        return num
