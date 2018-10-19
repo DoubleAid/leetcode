@@ -1,0 +1,32 @@
+class Solution:
+    def isMatch(self, s, p):
+        """
+        :type s: str
+        :type p: str
+        :rtype: bool
+        """
+        slen = len(s)
+        plen = len(p)
+        arr = [([0] * slen) for i in range(plen)]
+        for j in range(slen):
+            if p[0] == '.':
+                arr[0][j] = 1
+            if p[0] == s[j]:
+                arr[0][j] = 1
+
+        for row in arr:
+            print(row)
+
+        for i in range(plen):
+            for j in range(slen):
+                if p[i] == '.':
+                    arr[i][j] = 1
+
+        for row in arr:
+            print(row)
+
+if __name__ == "__main__":
+    s = "mississippi"
+    p = "mis*is*p*."
+    t = Solution()
+    t.isMatch(s,p)
