@@ -60,6 +60,7 @@ class Solution:
             if ccost[i] < 0 and ccost[i+1] >= 0 and self.testCircuit(ccost[i+1:] + ccost[:i+1]):
                 return i + 1
         return -1
+
     def testCircuit(self, nums):
         result = 0
         for each in nums[1:]:
