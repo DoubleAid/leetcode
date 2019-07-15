@@ -45,6 +45,26 @@ You cannot travel back to station 2, as it requires 4 unit of gas but you only h
 Therefore, you can't travel around the circuit once no matter where you start.
 
 ## 方法一
+### 想法:
+用gas-cost来表示gas tank在该站点的变化，那么如果有解决方法，一定是从一个变化值>0，而且前一个值小于零
 ```
 class Solution:
+    def canCompleteCircuit(self, gas, cost):
+        ccost = []
+        stationlen = len(gas)
+        for i in range(stationlen):
+            ccost.append(gas[i] - cost[i])
+        if (stationlen == 1 and ccost[0] >= 0) or (ccost[0] >= 0 and ccost[-1] < 0 and self.testCircuit(ccost)):
+            return 0
+        for i in range(stationlen - 1):
+            if ccost[i] < 0 and ccost[i+1] >= 0 and self.testCircuit(ccost[i+1:] + ccost[:i+1]):
+                return i + 1
+        return -1
+    def testCircuit(self, nums):
+        result = 0
+        for each in nums[1:]:
+            result += each
+            if result < 0:
+                return False
+        return True
 ```
