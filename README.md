@@ -2,4 +2,6 @@
 
 ## <font color=red>Give better life for myself</font>
 
-finish 150 before May
+# record
+### 7.15 
+132
