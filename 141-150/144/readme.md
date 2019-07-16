@@ -3,7 +3,7 @@ Given a binary tree, return the preorder traversal of its nodes' values.
 # 用例
 ## Example 1:
 
-Input: [1,null,2,3]
+Input: [1,null,2,3]  
    1  
     \  
      2  
