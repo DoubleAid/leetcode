@@ -41,6 +41,7 @@ letters consists of lowercase letters, and contains at least 2 unique letters.
 target is a lowercase letter.
 ## 方法一
 ### 想法
+注意 ascill码和字符的相互转换 ord()和chr()的用法
 做一个26个字母的标记位，如果存在，标记位大于零，这样只要利用余数循环查询一遍就能找到了
 ```
 class Solution:
