@@ -4,8 +4,8 @@ Given a reference of a node in a connected undirected graph, return a deep copy 
 ## 用例
 ### Example:
 1---2  
-|&nbsp;&nbsp;&nbsp;|
-|&nbsp;&nbsp;&nbsp;|  
+|&nbsp;&nbsp;&nbsp;&nbsp;|  
+|&nbsp;&nbsp;&nbsp;&nbsp;|  
 4---3  
 
 #### Input:
