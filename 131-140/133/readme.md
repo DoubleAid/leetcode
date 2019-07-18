@@ -20,6 +20,7 @@ Given a reference of a node in a connected undirected graph, return a deep copy 
 ## 方法一
 ### 想法
 使用队列进行广度优先遍历，将便利完的值标记为对应的新图的节点值
+#### time 75% memory 55%
 ```
 """
 # Definition for a Node.
