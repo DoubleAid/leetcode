@@ -15,7 +15,7 @@ Explanation: The answer is "b", with the length of 1.
 Input: "pwwkew"  
 Output: 3  
 Explanation: The answer is "wke", with the length of 3.   
-###Note that the answer must be a substring, "pwke" is a subsequence and not a substring.  
+### Note that the answer must be a substring, "pwke" is a subsequence and not a substring.  
 ## 方法一
 ### 想法：
 维护一个最后见面的表，表里记录最后一次见面的位置，最大长度为最后一次见面里最前面与最后面的差值
