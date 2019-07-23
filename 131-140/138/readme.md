@@ -5,10 +5,10 @@ A linked list is given such that each node contains an additional random pointer
 Return a deep copy of the list.
 
 ## 用例
-####Input:
+#### Input:
 {"$id":"1","next":{"$id":"2","next":null,"random":{"$ref":"2"},"val":2},"random":{"$ref":"2"},"val":1}
 
-####Explanation:
+#### Explanation:
 Node 1's value is 1, both of its next and random pointer points to Node 2.
 Node 2's value is 2, its next pointer points to null and its random pointer points to itself.
 ## 方法一
