@@ -3,6 +3,7 @@
 A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.
 
 Return a deep copy of the list.
+![image](https://github.com/DoubleAid/leetcode/blob/leetcode/131-140/138/images/20160317145247237.jpeg)
 
 ## 用例
 #### Input:
@@ -14,8 +15,16 @@ Node 2's value is 2, its next pointer points to null and its random pointer poin
 ## 方法一
 ### 想法
 1.复制给定链表的每一个节点，将其插入到给定链表中原节点的后面
+![image](https://github.com/DoubleAid/leetcode/blob/leetcode/131-140/138/images/20160317145408551.jpeg)
+
 2.复制random指针，由于新节点就在原节点的后面，因此，依次检测给定链表中的每一个节点，若random不为空，则将它的下一个节点的random指针指向原节点random指针所指节点的下一个节点
+![image](https://github.com/DoubleAid/leetcode/blob/leetcode/131-140/138/images/20160317145746057.jpeg)
+
 3.将该链表拆分成新旧两个链表，返回新链表
+![image](https://github.com/DoubleAid/leetcode/blob/leetcode/131-140/138/images/20160317145901152.jpeg)
+
+![image](https://github.com/DoubleAid/leetcode/blob/leetcode/131-140/138/images/20160317150014950.jpeg)
+
 ```
 class Solution:
     def copyRandomList(self, head: 'Node') -> 'Node':
