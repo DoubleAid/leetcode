@@ -45,6 +45,7 @@ class Solution:
 ## 方法二
 ### 想法
 通过快慢指针确定中间位置，将之后的元素压入栈内，这会节省一半的空间和时间
+### time 63% momery 5%
 ```
 class Solution:
     def reorderList(self, head: ListNode) -> None:
