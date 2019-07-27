@@ -42,3 +42,30 @@ class Solution:
         p.next = None
         return headnode.next
 ```
+## 方法二
+### 想法
+通过快慢指针确定中间位置，将之后的元素压入栈内，这会节省一半的空间和时间
+```
+class Solution:
+    def reorderList(self, head: ListNode) -> None:
+        fast = head
+        slow = head
+        while fast is not None and fast.next is not None:
+            fast = fast.next.next
+            slow = slow.next
+        try:
+            lastpart = slow.next
+            slow.next = None
+        except:
+            lastpart = None
+        stack = []
+        while lastpart is not None:
+            stack.append(lastpart)
+            lastpart = lastpart.next
+        fast = head
+        while stack:
+            temp = stack.pop()
+            fast.next,temp.next = temp,fast.next
+            fast = fast.next.next
+```
+
