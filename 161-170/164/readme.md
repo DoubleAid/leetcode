@@ -27,6 +27,7 @@ Try to solve it in linear time/space.
 因为是在一个范围内随机分布，可以使用桶排序的类似方法，
 首先确认桶长:(maxv - minv)//(len-1)
 每个桶维护一个最大值和一个最小值
+#### time 22.95% memory 27.14%
 ```
 class Solution(object):
     def maximumGap(self, nums):
