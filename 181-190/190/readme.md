@@ -23,6 +23,7 @@ If this function is called many times, how would you optimize it?
 ## 方法一
 ### 思路
 32次循环，每次提取一位比特数，放到结果中去，再乘以二
+#### time 99.26% memory 37.77%
 ```
 class Solution:
     # @param n, an integer
