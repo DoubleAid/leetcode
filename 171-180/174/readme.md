@@ -1,3 +1,61 @@
-# ��Ŀ
+## 题目
+The demons had captured the princess (P) and imprisoned her in the bottom-right corner of a dungeon. The dungeon consists of M x N rooms laid out in a 2D grid. Our valiant knight (K) was initially positioned in the top-left room and must fight his way through the dungeon to rescue the princess.
 
-# ����
+The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.
+
+Some of the rooms are guarded by demons, so the knight loses health (negative integers) upon entering these rooms; other rooms are either empty (0's) or contain magic orbs that increase the knight's health (positive integers).
+
+In order to reach the princess as quickly as possible, the knight decides to move only rightward or downward in each step.
+
+ 
+
+Write a function to determine the knight's minimum initial health so that he is able to rescue the princess.
+## 用例
+
+For example, given the dungeon below, the initial health of the knight must be at least 7 if he follows the optimal path RIGHT-> RIGHT -> DOWN -> DOWN.
+
+| -2 (k) | -3	 | 3     |
+| :----: | :---: | :---: |
+| -5	 | -10	 | 1     |
+| 10	 | 30	 | -5 (P)|
+ 
+#### Note:
+The knight's health has no upper bound.
+Any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
+## 方法一
+### 思路
+从右下角向左上方移动，初始生命值为1，确定了右下角的值，就可以确定对应的行和列的值，知道确定最上面一行或者最左边一列的值
+```
+class Solution(object):
+    def (self, dungeon):
+        """
+        :type dungeon: List[List[int]]
+        :rtype: int
+        """
+        row = len(dungeon)
+        col = len(dungeon[0])
+        k = 1 - dungeon[-1][-1]
+        dungeon[-1][-1] = 1 if k<= 0 else k
+        for i in range(col-2,-1,-1):
+            val = dungeon[-1][i+1] - dungeon[-1][i]
+            if val <= 0:
+                dungeon[-1][i] = 1
+            else:
+                dungeon[-1][i] = val
+        for i in range(row-2,-1,-1):
+            val = dungeon[i+1][-1] - dungeon[i][-1]
+            if val <= 0:
+                dungeon[i][-1] = 1
+            else:
+                dungeon[i][-1] = val
+        for i in range(row-2,-1,-1):
+            for j in range(col-2,-1,-1):
+                v = dungeon[i+1][j] - dungeon[i][j]
+                val1 = 1 if v <= 0 else v
+                u = dungeon[i][j+1] - dungeon[i][j]
+                val2 = 1 if u <= 0 else u
+                dungeon[i][j] = min(val1,val2)
+        for each in dungeon:
+            print(each)
+        return dungeon[0][0]
+```
