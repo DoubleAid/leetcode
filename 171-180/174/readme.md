@@ -25,6 +25,7 @@ Any room can contain threats or power-ups, even the first room the knight enters
 ## 方法一
 ### 思路
 从右下角向左上方移动，初始生命值为1，确定了右下角的值，就可以确定对应的行和列的值，知道确定最上面一行或者最左边一列的值
+#### time 17.40% memory 42.86%
 ```
 class Solution(object):
     def (self, dungeon):
