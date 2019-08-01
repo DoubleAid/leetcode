@@ -19,7 +19,8 @@ Note that in some languages such as Java, there is no unsigned integer type. In 
 In Java, the compiler represents the signed integers using 2's complement notation. Therefore, in Example 3 above the input represents the signed integer -3.
 ## 方法一
 ### 思路
-循环除法
+循环除法,但这绝对不是这道题的目的
+#### time 81.43% memory 5.52%
 ```
 class Solution(object):
     def hammingWeight(self, n):
