@@ -22,6 +22,7 @@ You may assume both s and t have the same length.
 ## 方法一
 ### 思路
 在两个字符上做映射，不用两个都是映射，一个映射，一个字符串
+#### time 93.68% memory 12.70%
 ```
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
